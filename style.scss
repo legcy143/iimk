@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "./helper.scss";
+
+:root {
+    --theme-color: white;
+    --theme-nav: #92001D;
+    --theme-bg: #F67F2A;
+    --theme-bg-grad: linear-gradient(90deg, #EE2A42, #F88E26);
+    --primary-color: #F67F2A;
+    --primary-color-rgb: 246, 127, 42;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--theme-bg-grad);
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+a,
+button,
+input {
+    transition: 0.30s ease;
+}
+
+.main_nav {
+    background-color: var(--theme-color);
+    max-width: 100%;
+    overflow: hidden;
+    height: fit-content;
+
+    .info_nav,
+    .nav_links {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .info_nav {
+        padding: 1rem;
+        @include flexBox(row, space-between);
+        flex-wrap: wrap;
+
+        img {
+            width: fit-content;
+            max-width: 100%;
+        }
+    }
+
+    .nav_links {
+        background-color: var(--theme-nav);
+        @include flexBox();
+
+        ul {
+            list-style: none;
+            @include flexBox();
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: 400;
+                text-transform: capitalize;
+                padding: 0.4rem 1rem;
+                border-radius: 11rem;
+                opacity: 0.8;
+
+                &:hover {
+                    opacity: 1;
+                    background-color: rgba(0, 0, 0, 0.135);
+                    box-shadow: 0px 7px 21px rgba(16, 16, 16, 0.25);
+                }
+            }
+        }
+
+        button {
+            @include primarbtn();
+        }
+    }
+}
+
+.hero_section {
+    @include flexBox(row, center);
+}
+
+.info_side_hero_section {
+    width: min(40rem, 100%);
+    overflow: hidden;
+    padding: 2rem;
+    color: var(--theme-color);
+
+    h1 {
+        text-transform: capitalize;
+        font-size: 2rem;
+
+        span {
+            font-weight: 400;
+            opacity: 0.8;
+        }
+    }
+
+    small {
+        margin: 0.5rem;
+        display: block;
+    }
+
+    button {
+        @include primarbtn()
+    }
+
+}
+
+.vedio_image_side {
+    padding: 1rem;
+    @include flexBox();
+
+    img {
+        width: min(30rem, 90%);
+        border-radius: 0.5rem;
+    }
+}
+
+.menu_toggle_div {
+    display: none;
+}
+
+@media (max-width:1050px) {
+    .menu_toggle_div {
+        padding: 0.1rem 0.5rem;
+        border-radius: 0.5rem;
+        transition: 0.30s ease;
+        @include flexBox();
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(50, 50, 50, 0.2);
+        }
+
+        img {
+            width: 2rem;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            color: rgba(231, 231, 231, 0.826);
+        }
+    }
+
+    .main_nav {
+        .info_nav {
+            justify-content: center;
+        }
+
+        .nav_links {
+            padding-right: 2rem;
+            background-color: var(--theme-nav);
+            @include flexBox(row, space-between, flex-start);
+            position: relative;
+            transition: 0.30s ease;
+
+            ul {
+                @include flexBox(column, flex-start, flex-start , 0rem);
+                overflow: hidden;
+                a{
+                    transition: 0.30s ease;
+                    width: 0px;
+                    height: 0px;
+                    padding: 0;
+                    overflow: hidden;
+                }
+            }
+
+            .open_menu_ul {
+                gap: 0.5rem;
+                a{
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 0.4rem 1rem;
+                }
+            }
+        }
+    }
+
+    .hero_section {
+        width: 100vw;
+        @include flexBox(column, center);
+
+        div {
+            max-width: 90%;
+            padding: 1.5rem 0.5rem;
+        }
+    }
+}

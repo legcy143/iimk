@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>iimk</title>
+</head>
+<body>
+    <nav class="main_nav">
+        <nav class="info_nav">
+            <img src="/img/iim_logo.png" alt="img">
+            <img src="/img/iim_associate.png" alt="img">
+        </nav>
+        <nav class="nav_links">
+            <ul id="navUl">
+                <div class="menu_toggle_div" onclick="togglemenu()">
+                    <img src="/img/menu_icon.png" alt="img">
+                    <h2>iimk</h2>
+                </div>
+                <a href="#">About institute</a>
+                <a href="#">Academics</a>
+                <a href="#">faculty</a>
+                <a href="#">research</a>
+                <a href="#">placements</a>
+                <a href="#">international realtion</a>
+            </ul>
+            <button>contact us</button>
+        </nav>
+
+    </nav>
+    <section class="hero_section">
+        <div class="info_side_hero_section">
+            <h1>
+                <span>welcome to</span><br>
+                the indian institue of management <br>
+                kashipur
+            </h1>
+            <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto itaque unde ipsa omnis nihil esse porro, dolorum numquam, impedit voluptates consectetur animi maiores.</small>
+            <button>read more</button>
+        </div>
+        <div class="vedio_image_side">
+            <img src="img/iim_vedio.png" alt="">
+        </div>
+    </section>
+
+    <script>
+        let navUl = document.getElementById("navUl")
+        function togglemenu(){
+            console.log("har har mahadev namh shivay")
+            navUl.classList.toggle("open_menu_ul")
+            console.log(navUl.classList)
+        }
+    </script>
+</body>
+</html>
